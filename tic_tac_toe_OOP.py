@@ -132,115 +132,98 @@ class tic_tac_toe:
         print('7' + ' | ' + '8' + ' | ' + '9' + '    ' + self.game_board[6] + ' | ' + self.game_board[7] + ' | ' + self.game_board[8])
 
     def check_for_win(self):
+        # Player win conditions
+        # horizontal
+        if self.player_unit in self.game_board[0] and self.player_unit in self.game_board[1] and self.player_unit in self.game_board[2]:
+            print('You win!')
+            self.player_score += 1
+            tic_tac_toe.play_again()
+            return
+        if self.player_unit in self.game_board[3] and self.player_unit in self.game_board[4] and self.player_unit in self.game_board[5]:
+            print('You win!')
+            self.player_score += 1
+            tic_tac_toe.play_again()
+            return
+        if self.player_unit in self.game_board[6] and self.player_unit in self.game_board[7] and self.player_unit in self.game_board[8]:
+            print('You win!')
+            self.player_score += 1
+            tic_tac_toe.play_again()
+            return
+        # vertical
+        if self.player_unit in self.game_board[0] and self.player_unit in self.game_board[3] and self.player_unit in self.game_board[6]:
+            print('You win!')
+            self.player_score += 1
+            tic_tac_toe.play_again()
+            return
+        if self.player_unit in self.game_board[1] and self.player_unit in self.game_board[4] and self.player_unit in self.game_board[7]:
+            print('You win!')
+            self.player_score += 1
+            tic_tac_toe.play_again()
+            return
+        if self.player_unit in self.game_board[2] and self.player_unit in self.game_board[5] and self.player_unit in self.game_board[8]:
+            print('You win!')
+            self.player_score += 1
+            tic_tac_toe.play_again()
+            return
+        # diagonal
+        if self.player_unit in self.game_board[0] and self.player_unit in self.game_board[4] and self.player_unit in self.game_board[8]:
+            print('You win!')
+            self.player_score += 1
+            tic_tac_toe.play_again()
+            return
+        if self.player_unit in self.game_board[2] and self.player_unit in self.game_board[4] and self.player_unit in self.game_board[6]:
+            print('You win!')
+            self.player_score += 1
+            tic_tac_toe.play_again()
+            return
+        # cpu win conditions
+        # horizontal
+        if self.cpu_unit in self.game_board[0] and self.cpu_unit in self.game_board[1] and self.cpu_unit in self.game_board[2]:
+            print('CPU wins!')
+            self.cpu_score += 1
+            tic_tac_toe.play_again()
+            return
+        if self.cpu_unit in self.game_board[3] and self.cpu_unit in self.game_board[4] and self.cpu_unit in self.game_board[5]:
+            print('CPU wins!')
+            self.cpu_score += 1
+            tic_tac_toe.play_again()
+            return
+        if self.cpu_unit in self.game_board[6] and self.cpu_unit in self.game_board[7] and self.cpu_unit in self.game_board[8]:
+            print('CPU wins!')
+            self.cpu_score += 1
+            tic_tac_toe.play_again()
+            return
+        # vertical
+        if self.cpu_unit in self.game_board[0] and self.cpu_unit in self.game_board[3] and self.cpu_unit in self.game_board[6]:
+            print('CPU wins!')
+            self.cpu_score += 1
+            tic_tac_toe.play_again()
+            return
+        if self.cpu_unit in self.game_board[1] and self.cpu_unit in self.game_board[4] and self.cpu_unit in self.game_board[7]:
+            print('CPU wins!')
+            self.cpu_score += 1
+            tic_tac_toe.play_again()
+            return
+        if self.cpu_unit in self.game_board[2] and self.cpu_unit in self.game_board[5] and self.cpu_unit in self.game_board[8]:
+            print('CPU wins!')
+            self.cpu_score += 1
+            tic_tac_toe.play_again()
+            return
+        # diagonal
+        if self.cpu_unit in self.game_board[0] and self.cpu_unit in self.game_board[4] and self.cpu_unit in self.game_board[8]:
+            print('CPU wins!')
+            self.cpu_score += 1
+            tic_tac_toe.play_again()
+            return
+        if self.cpu_unit in self.game_board[2] and self.cpu_unit in self.game_board[4] and self.cpu_unit in self.game_board[6]:
+            print('CPU wins!')
+            self.cpu_score += 1
+            tic_tac_toe.play_again()
+            return
         if '-' not in self.game_board:
             print('Tie game!')
             tic_tac_toe.play_again()
             return
-
-        if '-' in self.game_board:
-            # Player win conditions
-            # horizontal
-            if self.player_unit in self.game_board[0] and self.player_unit in self.game_board[1] and self.player_unit in self.game_board[2]:
-                print('You win!')
-                self.player_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            if self.player_unit in self.game_board[3] and self.player_unit in self.game_board[4] and self.player_unit in self.game_board[5]:
-                print('You win!')
-                self.player_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            if self.player_unit in self.game_board[6] and self.player_unit in self.game_board[7] and self.player_unit in self.game_board[8]:
-                print('You win!')
-                self.player_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            # vertical
-            if self.player_unit in self.game_board[0] and self.player_unit in self.game_board[3] and self.player_unit in self.game_board[6]:
-                print('You win!')
-                self.player_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            if self.player_unit in self.game_board[1] and self.player_unit in self.game_board[4] and self.player_unit in self.game_board[7]:
-                print('You win!')
-                self.player_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            if self.player_unit in self.game_board[2] and self.player_unit in self.game_board[5] and self.player_unit in self.game_board[8]:
-                print('You win!')
-                self.player_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            # diagonal
-            if self.player_unit in self.game_board[0] and self.player_unit in self.game_board[4] and self.player_unit in self.game_board[8]:
-                print('You win!')
-                self.player_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            if self.player_unit in self.game_board[2] and self.player_unit in self.game_board[4] and self.player_unit in self.game_board[6]:
-                print('You win!')
-                self.player_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            # cpu win conditions
-            # horizontal
-            if self.cpu_unit in self.game_board[0] and self.cpu_unit in self.game_board[1] and self.cpu_unit in self.game_board[2]:
-                print('CPU wins!')
-                self.cpu_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            if self.cpu_unit in self.game_board[3] and self.cpu_unit in self.game_board[4] and self.cpu_unit in self.game_board[5]:
-                print('CPU wins!')
-                self.cpu_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            if self.cpu_unit in self.game_board[6] and self.cpu_unit in self.game_board[7] and self.cpu_unit in self.game_board[8]:
-                print('CPU wins!')
-                self.cpu_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            # vertical
-            if self.cpu_unit in self.game_board[0] and self.cpu_unit in self.game_board[3] and self.cpu_unit in self.game_board[6]:
-                print('CPU wins!')
-                self.cpu_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            if self.cpu_unit in self.game_board[1] and self.cpu_unit in self.game_board[4] and self.cpu_unit in self.game_board[7]:
-                print('CPU wins!')
-                self.cpu_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            if self.cpu_unit in self.game_board[2] and self.cpu_unit in self.game_board[5] and self.cpu_unit in self.game_board[8]:
-                print('CPU wins!')
-                self.cpu_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            # diagonal
-            if self.cpu_unit in self.game_board[0] and self.cpu_unit in self.game_board[4] and self.cpu_unit in self.game_board[8]:
-                print('CPU wins!')
-                self.cpu_score += 1
-                tic_tac_toe.play_again()
-                return
-
-            if self.cpu_unit in self.game_board[2] and self.cpu_unit in self.game_board[4] and self.cpu_unit in self.game_board[6]:
-                print('CPU wins!')
-                self.cpu_score += 1
-                tic_tac_toe.play_again()
-                return
 
     def announce_player_turn(self):
         print('*****YOUR TURN*****')
@@ -253,6 +236,7 @@ class tic_tac_toe:
         if self.player_choice not in range(1,10):
             print('That was not a valid choice. Try again.')
             tic_tac_toe.player_turn()
+            return
         if self.game_board[self.player_choice-1] == '-':
             self.game_board[self.player_choice-1] = self.player_unit
             print('The player has selected ' + str(self.player_choice) + '!')
